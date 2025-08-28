@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio - l1xxxx | Especialista en Discord & Minecraft</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Added all CSS styles inline -->
+    <style>
+        /* Custom CSS Styles */
+        :root {
+          --primary-color: #7289da;
+          --secondary-color: #99aab5;
+          --accent-color: #43b581;
+          --dark-color: #2c2f33;
+          --light-color: #ffffff;
+          --gradient-primary: linear-gradient(135deg, #7289da 0%, #5865f2 100%);
+          --gradient-secondary: linear-gradient(135deg, #43b581 0%, #3ba55c 100%);
+        }
+
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: "Poppins", sans-serif;
+          line-height: 1.6;
+          color: #333;
+          overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+          scroll-behavior: smooth;
+        }
+
+        /* Custom Navbar */
+        .custom-navbar {
+          background: rgba(44, 47, 51, 0.95);
+          backdrop-filter: blur(10px);
+          transition: all 0.3s ease;
+          padding: 1rem 0;
+        }
+
+        .custom-navbar .navbar-brand {
+          font-weight: 700;
+          font-size: 1.5rem;
+          color: var(--primary-color) !important;
+        }
+
+        .custom-navbar .nav-link {
+          color: var(--light-color) !important;
+          font-weight: 500;
+          margin: 0 0.5rem;
+          transition: all 0.3s ease;
+          position: relative;
+        }
+
+        .custom-navbar .nav-link:hover {
+          color: var(--primary-color) !important;
+          transform: translateY(-2px);
+        }
+
+        .custom-navbar .nav-link::after {
+          content: "";
+          position: absolute;
+          width: 0;
+          height: 2px;
+          bottom: -5px;
+          left: 50%;
+          background: var(--primary-color);
+          transition: all 0.3s ease;
+          transform: translateX(-50%);
+        }
+
+        .custom-navbar .nav-link:hover::after {
+          width: 100%;
+        }
+
+        /* Hero Section */
+        .hero-section {
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          position: relative;
+          overflow: hidden;
+        }
+
+        .hero-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+          position: relative;
+          z-index: 2;
+          color: white;
+        }
+
+        .hero-title {
+          font-size: 3.5rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+          line-height: 1.2;
+        }
+
+        .hero-subtitle {
+          font-size: 1.5rem;
+          font-weight: 400;
+          margin-bottom: 1.5rem;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+          margin-bottom: 2rem;
+          color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-stats {
+          display: flex;
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .stat-item {
+          text-align: center;
+        }
+
+        .stat-number {
+          display: block;
+          font-size: 2rem;
+          font-weight: 700;
+          color: var(--accent-color);
+        }
+
+        .stat-label {
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-buttons .btn {
+          padding: 12px 30px;
+          font-weight: 600;
+          border-radius: 50px;
+          transition: all 0.3s ease;
+        }
+
+        .hero-buttons .btn:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Floating Icons */
+        .hero-image {
+          position: relative;
+          height: 400px;
+        }
+
+        .floating-icons {
+          position: relative;
+          height: 100%;
+        }
+
+        .floating-icon {
+          position: absolute;
+          font-size: 4rem;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .discord-icon {
+          color: #7289da;
+          top: 20%;
+          left: 20%;
+          animation-delay: 0s;
+        }
+
+        .minecraft-icon {
+          color: #43b581;
+          top: 50%;
+          right: 20%;
+          animation-delay: 2s;
+        }
+
+        .server-icon {
+          color: #faa61a;
+          bottom: 20%;
+          left: 50%;
+          animation-delay: 4s;
+        }
+
+        /* Animations */
+        @keyframes float {
+          0%,
+          100% {
+            transform: translateY(0px);
+          }
+          50% {
+            transform: translateY(-20px);
+          }
+        }
+
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .animate-fade-in {
+          animation: fadeInUp 1s ease-out;
+        }
+
+        .animate-slide-up {
+          animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .animate-float {
+          animation: float 6s ease-in-out infinite;
+        }
+
+        /* Section Styles */
+        .section-title {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: var(--dark-color);
+          margin-bottom: 1rem;
+        }
+
+        .section-divider {
+          width: 80px;
+          height: 4px;
+          background: var(--gradient-primary);
+          margin: 0 auto 2rem;
+          border-radius: 2px;
+        }
+
+        .section-description {
+          font-size: 1.1rem;
+          color: #666;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-content h3 {
+          color: var(--primary-color);
+          margin-bottom: 1.5rem;
+          font-weight: 600;
+        }
+
+        .about-content .lead {
+          font-size: 1.1rem;
+          color: #555;
+          margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+          color: #666;
+          margin-bottom: 1rem;
+        }
+
+        /* Skills Section */
+        .skills-section h4 {
+          color: var(--dark-color);
+          margin-bottom: 2rem;
+          font-weight: 600;
+        }
+
+        .skill-item {
+          margin-bottom: 1.5rem;
+        }
+
+        .skill-header {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 0.5rem;
+          font-weight: 500;
+        }
+
+        .progress {
+          height: 8px;
+          border-radius: 10px;
+          background-color: #e9ecef;
+        }
+
+        .progress-bar {
+          border-radius: 10px;
+          transition: width 2s ease-in-out;
+        }
+
+        /* Service Cards */
+        .service-card {
+          background: white;
+          padding: 2.5rem;
+          border-radius: 15px;
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+          height: 100%;
+          border: 1px solid #f0f0f0;
+        }
+
+        .service-card:hover {
+          transform: translateY(-10px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 0 auto 1.5rem;
+          font-size: 2rem;
+          color: white;
+        }
+
+        .discord-service {
+          background: var(--gradient-primary);
+        }
+
+        .minecraft-service {
+          background: var(--gradient-secondary);
+        }
+
+        .service-card h4 {
+          color: var(--dark-color);
+          margin-bottom: 1.5rem;
+          font-weight: 600;
+          text-align: center;
+        }
+
+        .service-list {
+          list-style: none;
+          padding: 0;
+        }
+
+        .service-list li {
+          padding: 0.8rem 0;
+          border-bottom: 1px solid #f0f0f0;
+          color: #666;
+          line-height: 1.6;
+        }
+
+        .service-list li:last-child {
+          border-bottom: none;
+        }
+
+        .service-list li strong {
+          color: var(--primary-color);
+          font-weight: 600;
+        }
+
+        /* Portfolio Carousel */
+        .portfolio-carousel {
+          border-radius: 15px;
+          overflow: hidden;
+          box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio-carousel .carousel-item img {
+          height: 500px;
+          object-fit: cover;
+          width: 100%;
+        }
+
+        .portfolio-carousel .carousel-caption {
+          background: rgba(0, 0, 0, 0.7);
+          border-radius: 10px;
+          padding: 1.5rem;
+          bottom: 2rem;
+          left: 2rem;
+          right: 2rem;
+        }
+
+        .portfolio-carousel .carousel-caption h5 {
+          font-size: 1.3rem;
+          font-weight: 600;
+          margin-bottom: 0.5rem;
+        }
+
+        .portfolio-carousel .carousel-control-prev,
+        .portfolio-carousel .carousel-control-next {
+          width: 5%;
+          background: rgba(0, 0, 0, 0.3);
+          border-radius: 0 10px 10px 0;
+        }
+
+        .portfolio-carousel .carousel-control-next {
+          border-radius: 10px 0 0 10px;
+        }
+
+        .portfolio-carousel .carousel-indicators {
+          bottom: -50px;
+        }
+
+        .portfolio-carousel .carousel-indicators button {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+          margin: 0 5px;
+          background-color: var(--primary-color);
+        }
+
+        /* Contact Section */
+        .contact-info .contact-item {
+          display: flex;
+          align-items: center;
+          margin-bottom: 2rem;
+        }
+
+        .contact-info .contact-item i {
+          font-size: 1.5rem;
+          color: var(--primary-color);
+          margin-right: 1rem;
+          width: 30px;
+        }
+
+        .contact-info .contact-item h5 {
+          margin-bottom: 0.5rem;
+          font-weight: 600;
+        }
+
+        .contact-form .form-control {
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          color: white;
+          padding: 12px 15px;
+          border-radius: 8px;
+          margin-bottom: 1rem;
+        }
+
+        .contact-form .form-control:focus {
+          background: rgba(255, 255, 255, 0.15);
+          border-color: var(--primary-color);
+          box-shadow: 0 0 0 0.2rem rgba(114, 137, 218, 0.25);
+          color: white;
+        }
+
+        .contact-form .form-control::placeholder {
+          color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Social Links */
+        .social-links {
+          margin-top: 1rem;
+        }
+
+        .social-link {
+          display: inline-block;
+          width: 40px;
+          height: 40px;
+          background: var(--primary-color);
+          color: white;
+          text-align: center;
+          line-height: 40px;
+          border-radius: 50%;
+          margin: 0 0.5rem;
+          transition: all 0.3s ease;
+          text-decoration: none;
+        }
+
+        .social-link:hover {
+          background: var(--accent-color);
+          color: white;
+          transform: translateY(-3px);
+        }
+
+        /* Scroll Animations */
+        .animate-on-scroll {
+          opacity: 0;
+          transform: translateY(30px);
+          transition: all 0.8s ease;
+        }
+
+        .animate-on-scroll.animated {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .hero-title {
+            font-size: 2.5rem;
+          }
+
+          .hero-subtitle {
+            font-size: 1.2rem;
+          }
+
+          .hero-stats {
+            justify-content: center;
+            gap: 1rem;
+          }
+
+          .floating-icon {
+            font-size: 2.5rem;
+          }
+
+          .service-card {
+            padding: 2rem;
+            margin-bottom: 2rem;
+          }
+
+          .portfolio-carousel .carousel-item img {
+            height: 300px;
+          }
+
+          .portfolio-carousel .carousel-caption {
+            bottom: 1rem;
+            left: 1rem;
+            right: 1rem;
+            padding: 1rem;
+          }
+
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .hero-title {
+            font-size: 2rem;
+          }
+
+          .hero-buttons .btn {
+            display: block;
+            width: 100%;
+            margin-bottom: 1rem;
+          }
+
+          .service-card {
+            padding: 1.5rem;
+          }
+
+          .portfolio-carousel .carousel-indicators {
+            bottom: -30px;
+          }
+        }
+
+        /* Custom Button Styles */
+        .btn-primary {
+          background: var(--gradient-primary);
+          border: none;
+          border-radius: 50px;
+          padding: 12px 30px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+          background: var(--gradient-secondary);
+          transform: translateY(-2px);
+          box-shadow: 0 8px 20px rgba(114, 137, 218, 0.3);
+        }
+
+        .btn-outline-light {
+          border: 2px solid rgba(255, 255, 255, 0.8);
+          color: white;
+          border-radius: 50px;
+          padding: 10px 28px;
+          font-weight: 600;
+          transition: all 0.3s ease;
+        }
+
+        .btn-outline-light:hover {
+          background: white;
+          color: var(--primary-color);
+          transform: translateY(-2px);
+        }
+
+        /* Loading Animation */
+        .loading {
+          display: inline-block;
+          width: 20px;
+          height: 20px;
+          border: 3px solid rgba(255, 255, 255, 0.3);
+          border-radius: 50%;
+          border-top-color: white;
+          animation: spin 1s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+          to {
+            transform: rotate(360deg);
+          }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+        <div class="container">
+            <a class="navbar-brand animate-fade-in" href="#home">
+                <i class="fas fa-code"></i> l1xxxx
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Sobre Mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services">Servicios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-6">
+                    <div class="hero-content animate-slide-up">
+                        <h1 class="hero-title">
+                            Hola, soy Lix
+                        </h1>
+                        <h2 class="hero-subtitle">Especialista en Discord & Minecraft</h2>
+                        <p class="hero-description">
+                            Configuración profesional de servidores Discord y Minecraft Spigot. 
+                            Soluciones personalizadas para tu comunidad gaming.
+                        </p>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">18</span>
+                                <span class="stat-label">Años</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">🇩🇴</span>
+                                <span class="stat-label">República Dominicana</span>
+                            </div>
+                        </div>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary btn-lg me-3">Ver Servicios</a>
+                            <a href="#contact" class="btn btn-outline-light btn-lg">Contactar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image animate-float">
+                        <div class="floating-icons">
+                            <i class="fab fa-discord floating-icon discord-icon"></i>
+                            <i class="fas fa-cube floating-icon minecraft-icon"></i>
+                            <i class="fas fa-server floating-icon server-icon"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5 bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title animate-on-scroll">Sobre Mí</h2>
+                    <div class="section-divider"></div>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="about-content animate-on-scroll">
+                        <h3>Bienvenido a mi portafolio</h3>
+                        <p class="lead">
+                            A mis 18 años, he desarrollado una pasión y expertise excepcional en la configuración 
+                            y administración de servidores Discord y Minecraft Spigot. Mi juventud no es una limitación, 
+                            sino una ventaja que me permite estar al día con las últimas tendencias y tecnologías 
+                            en el mundo gaming.
+                        </p>
+                        <p>
+                            Desde República Dominicana, ofrezco servicios profesionales de configuración de servidores 
+                            que han ayudado a numerosas comunidades a crecer y prosperar. Mi enfoque se centra en 
+                            crear experiencias únicas y funcionales que superen las expectativas de mis clientes.
+                        </p>
+                        <p>
+                            Mi compromiso con la excelencia y mi dedicación al detalle me han permitido construir 
+                            una reputación sólida en el mercado, ofreciendo soluciones innovadoras a precios accesibles. 
+                            Cada proyecto es una oportunidad para demostrar mi pasión por la tecnología y mi 
+                            compromiso con la satisfacción del cliente.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="skills-section animate-on-scroll">
+                        <h4>Mis Especialidades</h4>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Configuración Discord</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Minecraft Spigot</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-success" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Base de Datos MySQL</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-info" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span>Traducción de Plugins</span>
+                                <span>88%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar bg-warning" style="width: 88%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title animate-on-scroll">Mis Servicios</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">
+                        Ofrezco soluciones completas y profesionales para tu servidor Discord y Minecraft
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon discord-service">
+                            <i class="fab fa-discord"></i>
+                        </div>
+                        <h4>Servicios Discord</h4>
+                        <ul class="service-list">
+                            <li><strong>Configuración de Categorías y Canales:</strong> Organización perfecta de tu servidor con estructura lógica y funcional que mejore la experiencia de usuario.</li>
+                            <li><strong>Sistema Anti Raid & AutoMod:</strong> Protección avanzada contra ataques y spam, con moderación automática inteligente para mantener tu comunidad segura.</li>
+                            <li><strong>Decoración Estética y Clásica:</strong> Diseño visual atractivo con emojis personalizados, banners y elementos gráficos que reflejen la identidad de tu servidor.</li>
+                            <li><strong>Creación de Embeds con Discohook:</strong> Mensajes profesionales y atractivos con formato avanzado para anuncios, reglas y información importante.</li>
+                            <li><strong>Sistema de Niveles y Autoroles:</strong> Gamificación completa con roles automáticos basados en actividad y participación de los miembros.</li>
+                            <li><strong>Sistema de Notificaciones:</strong> Alertas personalizadas para eventos importantes, nuevos miembros y actividades del servidor.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 mb-4">
+                    <div class="service-card animate-on-scroll">
+                        <div class="service-icon minecraft-service">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        <h4>Servicios Minecraft Server</h4>
+                        <ul class="service-list">
+                            <li><strong>Conexión con BungeeCord:</strong> Configuración de red de servidores múltiples para crear una experiencia de juego expandida y fluida entre diferentes mundos.</li>
+                            <li><strong>Integración MySQL con LuckyPerms:</strong> Sistema de rangos y permisos robusto con base de datos para gestión avanzada de usuarios y roles.</li>
+                            <li><strong>Conexión de Base de Datos con Plugins:</strong> Integración completa de MySQL con diversos plugins para estadísticas, economía y funcionalidades avanzadas.</li>
+                            <li><strong>Personalización de Interfaz:</strong> Decoración completa de Tab, Scoreboard y MOTD con diseños únicos que representen tu servidor.</li>
+                            <li><strong>Configuración Avanzada de Plugins:</strong> Optimización y personalización de plugins populares para maximizar el rendimiento y la experiencia de juego.</li>
+                            <li><strong>Traducción Profesional:</strong> Localización completa de plugins al español con terminología apropiada y natural para jugadores hispanohablantes.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-5 bg-dark text-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center mb-5">
+                    <h2 class="section-title animate-on-scroll">Contacto</h2>
+                    <div class="section-divider"></div>
+                    <p class="section-description">
+                        ¿Listo para llevar tu servidor al siguiente nivel? ¡Contáctame!
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-content animate-on-scroll">
+                        <div class="row">
+                        </div>
+                        <div class="text-center mt-5">
+                            <h4>¡Trabajemos Juntos!</h4>
+                            <p class="lead">
+                                Gracias por revisar mi portafolio. Estoy disponible para colaboraciones y proyectos 
+                                que requieran mis habilidades. Si estás interesado en trabajar juntos o deseas más 
+                                información, no dudes en contactarme. ¡Espero poder ayudarte a alcanzar tus objetivos en línea!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 bg-dark text-light text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <p>&copy; 2025 l1xxxx - Especialista en Discord & Minecraft. Todos los derechos reservados.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-discord"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Added all JavaScript code inline -->
+    <script>
+        // Custom JavaScript for Portfolio
+        document.addEventListener("DOMContentLoaded", () => {
+          // Smooth scrolling for navigation links
+          const navLinks = document.querySelectorAll('.nav-link[href^="#"]')
+          navLinks.forEach((link) => {
+            link.addEventListener("click", function (e) {
+              e.preventDefault()
+              const targetId = this.getAttribute("href").substring(1)
+              const targetElement = document.getElementById(targetId)
+
+              if (targetElement) {
+                const offsetTop = targetElement.offsetTop - 80
+                window.scrollTo({
+                  top: offsetTop,
+                  behavior: "smooth",
+                })
+              }
+            })
+          })
+
+          // Navbar background change on scroll
+          const navbar = document.querySelector(".custom-navbar")
+          window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+              navbar.style.background = "rgba(44, 47, 51, 0.98)"
+              navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.1)"
+            } else {
+              navbar.style.background = "rgba(44, 47, 51, 0.95)"
+              navbar.style.boxShadow = "none"
+            }
+          })
+
+          // Animate elements on scroll
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px",
+          }
+
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animated")
+              }
+            })
+          }, observerOptions)
+
+          // Observe all elements with animate-on-scroll class
+          const animateElements = document.querySelectorAll(".animate-on-scroll")
+          animateElements.forEach((el) => observer.observe(el))
+
+          // Animate skill bars when they come into view
+          const skillBars = document.querySelectorAll(".progress-bar")
+          const skillObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const progressBar = entry.target
+                const width = progressBar.style.width
+                progressBar.style.width = "0%"
+                setTimeout(() => {
+                  progressBar.style.width = width
+                }, 200)
+              }
+            })
+          }, observerOptions)
+
+          skillBars.forEach((bar) => skillObserver.observe(bar))
+
+          // Portfolio carousel auto-play control
+          const carousel = document.getElementById("portfolioCarousel")
+          if (carousel) {
+            // Pause on hover
+            carousel.addEventListener("mouseenter", () => {
+              const carouselInstance = window.bootstrap.Carousel.getInstance(carousel)
+              if (carouselInstance) {
+                carouselInstance.pause()
+              }
+            })
+
+            // Resume on mouse leave
+            carousel.addEventListener("mouseleave", () => {
+              const carouselInstance = window.bootstrap.Carousel.getInstance(carousel)
+              if (carouselInstance) {
+                carouselInstance.cycle()
+              }
+            })
+          }
+
+          // Contact form handling
+          const contactForm = document.querySelector(".contact-form form")
+          if (contactForm) {
+            contactForm.addEventListener("submit", function (e) {
+              e.preventDefault()
+
+              const submitBtn = this.querySelector('button[type="submit"]')
+              const originalText = submitBtn.innerHTML
+
+              // Show loading state
+              submitBtn.innerHTML = '<span class="loading"></span> Enviando...'
+              submitBtn.disabled = true
+
+              // Simulate form submission (replace with actual form handling)
+              setTimeout(() => {
+                submitBtn.innerHTML = '<i class="fas fa-check me-2"></i>¡Mensaje Enviado!'
+                submitBtn.classList.remove("btn-primary")
+                submitBtn.classList.add("btn-success")
+
+                // Reset form
+                this.reset()
+
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                  submitBtn.innerHTML = originalText
+                  submitBtn.disabled = false
+                  submitBtn.classList.remove("btn-success")
+                  submitBtn.classList.add("btn-primary")
+                }, 3000)
+              }, 2000)
+            })
+          }
+
+          // Add typing effect to hero title
+          const heroTitle = document.querySelector(".hero-title")
+          if (heroTitle) {
+            const text = heroTitle.innerHTML
+            heroTitle.innerHTML = ""
+            let i = 0
+
+            function typeWriter() {
+              if (i < text.length) {
+                heroTitle.innerHTML += text.charAt(i)
+                i++
+                setTimeout(typeWriter, 100)
+              }
+            }
+
+            // Start typing effect after a short delay
+            setTimeout(typeWriter, 1000)
+          }
+
+          // Parallax effect for hero section
+          window.addEventListener("scroll", () => {
+            const scrolled = window.pageYOffset
+            const heroSection = document.querySelector(".hero-section")
+            if (heroSection) {
+              const rate = scrolled * -0.5
+              heroSection.style.transform = `translateY(${rate}px)`
+            }
+          })
+
+          // Add click effect to service cards
+          const serviceCards = document.querySelectorAll(".service-card")
+          serviceCards.forEach((card) => {
+            card.addEventListener("click", function () {
+              this.style.transform = "scale(0.98)"
+              setTimeout(() => {
+                this.style.transform = ""
+              }, 150)
+            })
+          })
+
+          // Initialize tooltips if Bootstrap is available
+          if (typeof window.bootstrap !== "undefined") {
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+            tooltipTriggerList.map((tooltipTriggerEl) => new window.bootstrap.Tooltip(tooltipTriggerEl))
+          }
+
+          // Add smooth reveal animation for sections
+          const sections = document.querySelectorAll("section")
+          const sectionObserver = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.style.opacity = "1"
+                  entry.target.style.transform = "translateY(0)"
+                }
+              })
+            },
+            {
+              threshold: 0.1,
+            },
+          )
+
+          sections.forEach((section) => {
+            section.style.opacity = "0"
+            section.style.transform = "translateY(30px)"
+            section.style.transition = "all 0.8s ease"
+            sectionObserver.observe(section)
+          })
+        })
+
+        // Add custom cursor effect
+        document.addEventListener("mousemove", (e) => {
+          const cursor = document.querySelector(".custom-cursor")
+          if (!cursor) {
+            const newCursor = document.createElement("div")
+            newCursor.className = "custom-cursor"
+            newCursor.style.cssText = `
+                    position: fixed;
+                    width: 20px;
+                    height: 20px;
+                    background: rgba(114, 137, 218, 0.5);
+                    border-radius: 50%;
+                    pointer-events: none;
+                    z-index: 9999;
+                    transition: transform 0.1s ease;
+                `
+            document.body.appendChild(newCursor)
+          }
+
+          const cursorElement = document.querySelector(".custom-cursor")
+          if (cursorElement) {
+            cursorElement.style.left = e.clientX - 10 + "px"
+            cursorElement.style.top = e.clientY - 10 + "px"
+          }
+        })
+
+        // Performance optimization: Debounce scroll events
+        function debounce(func, wait) {
+          let timeout
+          return function executedFunction(...args) {
+            const later = () => {
+              clearTimeout(timeout)
+              func(...args)
+            }
+            clearTimeout(timeout)
+            timeout = setTimeout(later, wait)
+          }
+        }
+
+        // Apply debounce to scroll events
+        const debouncedScrollHandler = debounce(() => {
+          // Scroll-based animations here
+        }, 10)
+
+        window.addEventListener("scroll", debouncedScrollHandler)
+    </script>
+</body>
+</html>
